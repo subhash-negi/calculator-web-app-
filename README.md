@@ -31,6 +31,7 @@ Running the project.......
 
 Navigate to http://127.0.0.1:8000/ in your web browser to access the calculator application. Enter two numbers and select an operation to perform the calculation.
 
+![maxresdefault](https://github.com/subhash-negi/calculator-web-app-/blob/main/images/maxresdefault.jpg)
 
 **TEST CASES**
 The calculator app contains the following test cases that is run by the jenkins
@@ -86,6 +87,7 @@ class CalculatorTestCase(TestCase):
 
 ![Screenshot 2024-07-15 175748](https://github.com/subhash-negi/calculator-web-app-/blob/main/images/Screenshot%202024-07-15%20175748.jpg)
 ![Screenshot 2024-07-15 175841](https://github.com/subhash-negi/calculator-web-app-/blob/main/images/Screenshot%202024-07-15%20175841.jpg)
+
 
 
 
