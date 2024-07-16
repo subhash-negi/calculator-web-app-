@@ -1,0 +1,59 @@
+pipeline {
+    agent any
+    
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('dckr_pat_bFXTnfgBLo800YRJxPT4SCGzdvM')
+        IMAGE_NAME = 'subhashnegiji/calculator-web-app'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Clone the repository
+                git 'https://github.com/subhash-negi/calculator-web-app-.git'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Build the Docker image
+                    docker.build(IMAGE_NAME)
+                }
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                script {
+                    // Run tests inside the Docker container
+                    docker.image(IMAGE_NAME).run("--rm --name myapp-test pytest")
+                }
+            }
+        }
+
+        stage('Report Test Results') {
+            steps {
+                junit 'test-results/test.xml'
+            }
+        }
+
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'DOCKERHUB_CREDENTIALS') {
+                        // Push the Docker image
+                        docker.image(IMAGE_NAME).push()
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            // Clean up after the build
+            cleanWs()
+        }
+    }
+}
