@@ -83,11 +83,9 @@ class CalculatorTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'calculator.html')
 ```
+![Home Page](images/Screenshot 2024-07-15 175748.jpg)
+![Addition Operation](images/Screenshot 2024-07-15 175841.jpg)
 
-```markdown
-     ![Home Page](https://github.com/subhash-negi/calculator-web-app-/blob/main/images/Screenshot%202024-07-15%20175748.jpg)
-     ![testing image](images/Screenshot 2024-07-15 175841.jpg)
-    ```
 
 
 
