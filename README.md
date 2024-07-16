@@ -85,7 +85,7 @@ class CalculatorTestCase(TestCase):
 ```
 
 ```markdown
-     !(images/Screenshot 2024-07-15 175748.jpg)
+     ![Home Page](images/Screenshot 2024-07-15 175748.jpg)
      !(images/Screenshot 2024-07-15 175841.jpg)
 ```
 
