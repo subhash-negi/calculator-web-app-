@@ -82,11 +82,12 @@ class CalculatorTestCase(TestCase):
         })
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'calculator.html')
+```
 
-
-
-
-
+```markdown
+     !(images/Screenshot 2024-07-15 175748.jpg)
+     !(images/Screenshot 2024-07-15 175841.jpg)
+```
 
 
 
